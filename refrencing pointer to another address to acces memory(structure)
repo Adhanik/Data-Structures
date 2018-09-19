@@ -1,0 +1,33 @@
+/*In this example, the pointer variable of type struct person is referenced to the address of person1. Then, only the structure member through pointer can can accessed.
+
+Using -> operator to access structure pointer member
+
+Structure pointer member can also be accessed using -> operator.
+
+(*personPtr).age is same as personPtr->age
+(*personPtr).weight is same as personPtr->weight*/
+
+
+#include <stdio.h>
+typedef struct person
+{
+   int age;
+   float weight;
+};
+
+int main()
+{
+    struct person *personPtr, person1;
+    personPtr = &person1;            // Referencing pointer to memory address of person1
+
+    printf("Enter integer: ");
+    scanf("%d",&(*personPtr).age);
+
+    printf("Enter number: ");
+    scanf("%f",&(*personPtr).weight);
+
+    printf("Displaying: ");
+    printf("%d%f",(*personPtr).age,(*personPtr).weight);
+
+    return 0;
+}
